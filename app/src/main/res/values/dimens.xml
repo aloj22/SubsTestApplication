@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="movie_item_list_size">130dp</dimen>
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_big">16dp</dimen>
+    <dimen name="movie_list_title_text_size">18sp</dimen>
+    <dimen name="detail_text_size">14sp</dimen>
+    <dimen name="detail_icon_margin">2dp</dimen>
+    <dimen name="detail_icon_size">12dp</dimen>
+    <dimen name="detail_list_title_text_size">24sp</dimen>
+    <dimen name="movie_detail_item_lateral_margin">50dp</dimen>
+    <dimen name="system_bar_size">24dp</dimen>
+    <dimen name="movie_detail_backdrop_size">220dp</dimen>
+</resources>

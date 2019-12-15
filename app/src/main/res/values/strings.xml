@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Subs Test Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="movie_list_popular">Populars</string>
+    <string name="movie_list_favorites">Favorites</string>
+    <string name="empty_fav_movies_text">You haven\'t added any movie yet</string>
+    <string name="favorite">Favorite</string>
+</resources>

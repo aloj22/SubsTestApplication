@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="movie" type="com.example.substestapplication.domain.Movie"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <com.example.substestapplication.view.MoviePosterImageView
+                android:id="@+id/poster"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/movie_item_list_size"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:smallImageUrl="@{movie.posterPath}"
+                tools:background="@color/default_background_color"/>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backdrop"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/movie_item_list_size"
+                android:alpha="0.2"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toRightOf="@id/poster"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:imageUrl="@{movie.backdropPath}"
+                tools:alpha="1"
+                tools:background="@color/default_background_color"/>
+
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:text="@{movie.title}"
+                android:textSize="@dimen/movie_list_title_text_size"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@id/rating"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="The Lord of the Rings"/>
+
+
+        <TextView
+                android:id="@+id/popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                android:textSize="@dimen/detail_text_size"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_people"
+                android:drawablePadding="@dimen/detail_icon_margin"
+                android:textColor="@color/colorAccent"
+                app:popularity="@{movie.popularity}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/rating"
+                tools:text="415"/>
+
+
+        <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                android:textSize="@dimen/detail_text_size"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_star"
+                android:drawablePadding="@dimen/detail_icon_margin"
+                android:textColor="@color/colorAccent"
+                app:rating="@{movie.voteAverage}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="7.8"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

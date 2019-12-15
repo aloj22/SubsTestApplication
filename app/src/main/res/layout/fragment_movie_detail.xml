@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable name="viewModel" type="com.example.substestapplication.ui.movie.detail.MovieDetailViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backdrop_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/movie_detail_backdrop_size"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:imageUrl="@{viewModel.backdropPath}"
+                tools:background="@color/white"/>
+
+        <com.example.substestapplication.view.MoviePosterImageView
+                android:id="@+id/poster_image"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/movie_item_list_size"
+                app:layout_constraintBottom_toBottomOf="@id/backdrop_image"
+                app:layout_constraintTop_toBottomOf="@id/backdrop_image"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:smallImageUrl="@{viewModel.posterPath}"
+                tools:background="@color/colorAccent"/>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/detail_list_title_text_size"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@{viewModel.title}"
+                app:layout_constraintTop_toBottomOf="@id/backdrop_image"
+                app:layout_constraintLeft_toRightOf="@id/poster_image"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="The Lord of the Rings"/>
+
+
+        <TextView
+                android:id="@+id/popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_big"
+                android:layout_marginStart="@dimen/movie_detail_item_lateral_margin"
+                android:textSize="@dimen/detail_text_size"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_people"
+                android:drawablePadding="@dimen/detail_icon_margin"
+                android:textColor="@color/colorAccent"
+                app:popularity="@{viewModel.popularity}"
+                app:layout_constraintTop_toBottomOf="@id/poster_image"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="415"/>
+
+
+        <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                android:textSize="@dimen/detail_text_size"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_star"
+                android:drawablePadding="@dimen/detail_icon_margin"
+                android:textColor="@color/colorAccent"
+                app:rating="@{viewModel.voteAverage}"
+                app:layout_constraintBottom_toBottomOf="@id/popularity"
+                app:layout_constraintTop_toTopOf="@id/popularity"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="7.8"/>
+
+        <TextView
+                android:id="@+id/release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/movie_detail_item_lateral_margin"
+                android:textSize="@dimen/detail_text_size"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:drawablePadding="@dimen/detail_icon_margin"
+                android:textColor="@color/colorAccent"
+                app:date="@{viewModel.releaseDate}"
+                app:layout_constraintBottom_toBottomOf="@id/popularity"
+                app:layout_constraintTop_toTopOf="@id/popularity"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="31 Nov. 2019"/>
+
+
+        <TextView
+                android:id="@+id/overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@{viewModel.overview}"
+                app:layout_constraintTop_toBottomOf="@id/popularity"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
